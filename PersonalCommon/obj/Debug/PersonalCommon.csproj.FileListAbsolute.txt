@@ -1,0 +1,16 @@
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\PersonalCommon.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\PersonalCommon.pdb
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\Aspose.Cells.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\Aspose.Pdf.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\Aspose.Words.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\Newtonsoft.Json.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\NPOI.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\NPOI.OOXML.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\NPOI.OpenXml4Net.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\source\Demo\CommonService\PersonalCommon\obj\Debug\PersonalCommon.dll
+D:\source\Demo\CommonService\PersonalCommon\obj\Debug\PersonalCommon.pdb
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\PersonalCommon.XML
+D:\source\Demo\CommonService\PersonalCommon\bin\Debug\PersonalCommon.dll.config

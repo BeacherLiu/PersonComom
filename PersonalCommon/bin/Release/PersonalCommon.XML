@@ -1,0 +1,692 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PersonalCommon</name>
+    </assembly>
+    <members>
+        <member name="T:PersonalCommon.AutoMapper">
+            <summary>
+            AutoMapper扩展帮助类
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.AutoMapper.MapTo``2(``1)">
+            <summary>
+             类型映射,默认字段名字一一对应
+            </summary>
+            <typeparam name="TDestination">转化之后的model，可以理解为viewmodel</typeparam>
+            <typeparam name="TSource">要被转化的实体，Entity</typeparam>
+            <param name="source">可以使用这个扩展方法的类型，任何引用类型</param>
+            <returns>转化之后的实体</returns>
+        </member>
+        <member name="M:PersonalCommon.AutoMapper.MapToList``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            集合列表类型映射,默认字段名字一一对应
+            </summary>
+            <typeparam name="TDestination">转化之后的model，可以理解为viewmodel</typeparam>
+            <typeparam name="TSource">要被转化的实体，Entity</typeparam>
+            <param name="source">可以使用这个扩展方法的类型，任何引用类型</param>
+            <returns>转化之后的实体列表</returns>
+        </member>
+        <member name="T:PersonalCommon.DataFormat">
+            <summary>
+            数据标准化校验
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.DataFormat.IDCardFormat(System.String)">
+            <summary>
+            身份证号码校验
+            </summary>
+            <param name="idcard">身份证号码</param>
+            <returns>true 符合规范 false 不是有效身份证号码</returns>
+        </member>
+        <member name="M:PersonalCommon.DataFormat.PhoneFormat(System.String)">
+            <summary>
+            效验手机号码、座机号码
+            </summary>
+            <param name="phone">手机号或座机号</param>
+            <returns>true 符合规范 false 不符合规范</returns>
+        </member>
+        <member name="T:PersonalCommon.Encryption">
+            <summary>
+            明文加密解密
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.Encryption.GenerateKey">
+            <summary>
+            创建Key
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.MD5Encrypt(System.String,System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="pToEncrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.MD5Decrypt(System.String,System.String)">
+            <summary>
+            MD5解密
+            </summary>
+            <param name="pToDecrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.Encrypt(System.String,System.String)">
+            <summary>
+            DES数据加密
+            </summary>
+            <param name="targetValue">目标值</param>
+            <param name="key">密钥</param>
+            <returns>加密值</returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.Decrypt(System.String,System.String)">
+            <summary>
+            DES数据解密
+            </summary>
+            <param name="targetValue"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.EncryptionRSA(System.String)">
+            <summary>
+            RSA加密
+            </summary>
+            <param name="express"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.DecryptRSA(System.String)">
+            <summary>
+            RSA解密
+            </summary>
+            <param name="ciphertext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.UrlEncode(System.String)">
+            <summary>
+            URL加密
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.Encryption.UrlDecode(System.String)">
+            <summary>
+            URL解密
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.RemoteFileExists(System.String)">
+            <summary>
+            判断远程文件是否存在 
+            </summary>
+            <param name="fileUrl">远程文件路径，包括IP地址以及详细的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.FileExists(System.String,System.String)">
+            <summary>
+            创建文件
+            </summary>
+            <param name="path"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.StatisticalReport_Exl``1(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{``0},System.String)">
+            <summary>
+            文件导出,不需要模板
+            </summary>
+            <typeparam name="T">类名</typeparam>
+            <param name="title">文件标题</param>
+            <param name="head">表头</param>
+            <param name="list">内容</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.StatisticalReport_Exl(System.String,System.Collections.Generic.List{System.String},System.Data.DataTable,System.String)">
+            <summary>
+            文件导出,不需要模板
+            </summary>
+            <typeparam name="T">类名</typeparam>
+            <param name="title">文件标题</param>
+            <param name="head">表头</param>
+            <param name="dt">内容</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.StatisticalReport_Exl``1(System.String,System.Collections.Generic.List{System.String},System.Linq.IQueryable{``0},System.String)">
+            <summary>
+            文件导出,不需要模板
+            </summary>
+            <typeparam name="T">类名</typeparam>
+            <param name="title">文件标题</param>
+            <param name="head">表头</param>
+            <param name="datalist">内容</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.DataTableToExcel(System.Data.DataTable,System.String,System.String,System.Int32)">
+            <summary>
+            Excel文件导出，引入模板
+            </summary>
+            <param name="dt">数据集</param>
+            <param name="TempletFileName">模板文件</param>
+            <param name="sheetName">sheet名称</param>
+            <param name="rowBody">内容开始行索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.DataTableToExcel``1(System.Collections.Generic.List{``0},System.String,System.String,System.Int32)">
+            <summary>
+            Excel文件导出，引入模板
+            </summary>
+            <param name="list">数据集</param>
+            <param name="TempletFileName">模板文件</param>
+            <param name="sheetName">sheet名称</param>
+            <param name="rowBody">内容开始行索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.ExcelToDataTable(System.String,System.Boolean)">
+            <summary>  
+            将excel导入到datatable  
+            </summary>  
+            <param name="filePath">excel路径</param>  
+            <param name="isColumnName">第一行是否是列名</param>  
+            <returns>返回datatable</returns>  
+        </member>
+        <member name="M:PersonalCommon.FileHelper.DataTableToExcel(System.Data.DataTable,System.String)">
+            <summary>
+            将DataTable导入到excel
+            </summary>
+            <param name="dt">数据集</param>
+            <param name="saveFile">文件保存路径 例如：D:/myxls.xls</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.FileHelper.Report_Word(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Word文件填充数据(书签)后导出
+            </summary>
+            <param name="path">文件路径</param>
+            <param name="dictBookMark">书签数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:PersonalCommon.NpoiMemoryStream">
+            <summary>
+            Excel导出用
+            </summary>
+        </member>
+        <member name="T:PersonalCommon.IMGHelper">
+            <summary>
+            图片处理类
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.IMGHelper.ImgToBase64String(System.String)">
+            <summary>
+            //图片转为base64编码的字符串
+            </summary>
+            <param name="Imagefilename">图片路径及文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.IMGHelper.Base64StringToImage(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            Base64String转换图片
+            </summary>
+            <param name="filePath">文件保存路径,到图片文件夹</param>
+            <param name="base64string">图片BASE64字符串</param>
+            <param name="filename">图片名称</param>
+            <param name="extension">图片后缀名 jpg</param>
+            <param name="filepath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PersonalCommon.InterfaceHelper">
+            <summary>
+            接口调用帮助类
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.InterfaceHelper.queryRespose(System.String,System.String,System.String,System.Int32,System.Net.CookieContainer)">
+            <summary>
+            获取接口
+            </summary>
+            <param name="Url">接口地址</param>
+            <param name="postDataStr">参数字符串</param>
+            <param name="method">GET/POST</param>
+            <param name="timeout">请求时间：毫秒(1000ms=1s)</param>
+            <param name="cookie">cookie</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.InterfaceHelper.queryRespose``1(System.String,System.String,System.String,System.Int32,System.Net.CookieContainer)">
+            <summary>
+            获取接口
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="url">接口地址</param>
+            <param name="postDataStr">参数字符串</param>
+            <param name="method">GET/POST</param>
+            <param name="timeout">请求时间：毫秒(1000ms=1s)</param>
+            <param name="cookie">cookie</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.InterfaceHelper.DownloadPicture(System.String,System.String,System.Int32)">
+            <summary>
+            下载图片
+            </summary>
+            <param name="picUrl">图片Http地址</param>
+            <param name="savePath">保存路径</param>
+            <param name="timeOut">Request最大请求时间，如果为-1则无限制,单位：毫秒</param>
+            <returns></returns>
+        </member>
+        <member name="T:PersonalCommon.JsonHelper">
+            <summary>
+            Json帮助类
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.JsonHelper.Serialize(System.Object)">
+            <summary>
+            将对象序列化为JSON格式
+            </summary>
+            <param name="o">对象</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:PersonalCommon.JsonHelper.DeserializeJsonToObject``1(System.String)">
+            <summary>
+            解析JSON字符串生成对象实体
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json字符串(eg.{"ID":"112","Name":"石子儿"})</param>
+            <returns>对象实体</returns>
+        </member>
+        <member name="M:PersonalCommon.JsonHelper.DeserializeJsonToList``1(System.String)">
+            <summary>
+            解析JSON数组生成对象实体集合
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json数组字符串(eg.[{"ID":"112","Name":"石子儿"}])</param>
+            <returns>对象实体集合</returns>
+        </member>
+        <member name="M:PersonalCommon.JsonHelper.DeserializeAnonymousType``1(System.String,``0)">
+            <summary>
+            反序列化JSON到给定的匿名对象.
+            </summary>
+            <typeparam name="T">匿名对象类型</typeparam>
+            <param name="json">json字符串</param>
+            <param name="anonymousTypeObject">匿名对象</param>
+            <returns>匿名对象</returns>
+        </member>
+        <member name="T:PersonalCommon.MicrosoftOracleHelper">
+            <summary>  
+            Oracle数据库操作类
+            </summary>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库非查询操作,返回受影响的行数  
+            </summary>  
+            <param name="connectionString">数据库连接字符串</param>
+            <param name="cmdType">命令的类型</param>
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作影响的数据行数</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库事务非查询操作,返回受影响的行数  
+            </summary>  
+            <param name="transaction">数据库事务对象</param>  
+            <param name="cmdType">Command类型</param>  
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前事务查询操作影响的数据行数</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库非查询操作,返回受影响的行数  
+            </summary>  
+            <param name="connection">Oracle数据库连接对象</param>  
+            <param name="cmdType">Command类型</param>  
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作影响的数据行数</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库查询操作,返回OracleDataReader类型的内存结果集  
+            </summary>  
+            <param name="connectionString">数据库连接字符串</param>
+            <param name="cmdType">命令的类型</param>
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作返回的OracleDataReader类型的内存结果集</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteDataSet(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库查询操作,返回DataSet类型的结果集  
+            </summary>  
+            <param name="connectionString">数据库连接字符串</param>
+            <param name="cmdType">命令的类型</param>
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作返回的DataSet类型的结果集</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteDataTable(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库查询操作,返回DataTable类型的结果集  
+            </summary>  
+            <param name="connectionString">数据库连接字符串</param>
+            <param name="cmdType">命令的类型</param>
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作返回的DataTable类型的结果集</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库查询操作,返回结果集中位于第一行第一列的Object类型的值  
+            </summary>  
+            <param name="connectionString">数据库连接字符串</param>
+            <param name="cmdType">命令的类型</param>
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作返回的结果集中位于第一行第一列的Object类型的值</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteScalar(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+               <summary>  
+               执行数据库事务查询操作,返回结果集中位于第一行第一列的Object类型的值  
+               </summary>  
+               <param name="trans">一个已存在的数据库事务对象</param>  
+               <param name="commandType">命令类型</param>  
+               <param name="commandText">Oracle存储过程名称或PL/SQL命令</param>  
+               <param name="cmdParms">命令参数集合</param>  
+               <returns>当前事务查询操作返回的结果集中位于第一行第一列的Object类型的值</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.ExecuteScalar(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库查询操作,返回结果集中位于第一行第一列的Object类型的值  
+            </summary>  
+            <param name="conn">数据库连接对象</param>  
+            <param name="cmdType">Command类型</param>  
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+            <returns>当前查询操作返回的结果集中位于第一行第一列的Object类型的值</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.PrepareCommand(System.Data.OracleClient.OracleCommand,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>  
+            执行数据库命令前的准备工作  
+            </summary>  
+            <param name="cmd">Command对象</param>  
+            <param name="conn">数据库连接对象</param>  
+            <param name="trans">事务对象</param>  
+            <param name="cmdType">Command类型</param>  
+            <param name="cmdText">Oracle存储过程名称或PL/SQL命令</param>  
+            <param name="cmdParms">命令参数集合</param>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.GetOracleDateFormat(System.DateTime)">
+            <summary>  
+            将.NET日期时间类型转化为Oracle兼容的日期时间格式字符串  
+            </summary>  
+            <param name="date">.NET日期时间类型对象</param>  
+            <returns>Oracle兼容的日期时间格式字符串（如该字符串：TO_DATE('2007-12-1','YYYY-MM-DD')）</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.GetOracleDateFormat(System.DateTime,System.String)">
+            <summary>  
+            将.NET日期时间类型转化为Oracle兼容的日期格式字符串  
+            </summary>  
+            <param name="date">.NET日期时间类型对象</param>  
+            <param name="format">Oracle日期时间类型格式化限定符</param>  
+            <returns>Oracle兼容的日期时间格式字符串（如该字符串：TO_DATE('2007-12-1','YYYY-MM-DD')）</returns>  
+        </member>
+        <member name="M:PersonalCommon.MicrosoftOracleHelper.HandleLikeKey(System.String)">
+            <summary>  
+            将指定的关键字处理为模糊查询时的合法参数值  
+            </summary>  
+            <param name="source">待处理的查询关键字</param>  
+            <returns>过滤后的查询关键字</returns>  
+        </member>
+        <member name="T:PersonalCommon.OracleHelper">
+            <summary>
+            Oracle官网
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.OracleHelper.QueryObjectList``1(System.String)">
+            <summary>
+            获取对象列表
+            </summary>
+            <typeparam name="T">表所对应的对象名称</typeparam>
+            <param name="sql">查询语句</param>
+            <returns>返回获取到的对象实例列表</returns>
+        </member>
+        <member name="M:PersonalCommon.OracleHelper.ExecProc(System.String,System.String)">
+            <summary>
+            不带参数的存储过程
+            </summary>
+            <param name="strconn">连接字符串</param>
+            <param name="procname">存储过程名</param>
+        </member>
+        <member name="M:PersonalCommon.OracleHelper.ExecProc(System.String,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            没有返回值的带参数的存储过程
+            </summary>
+            <param name="strconn"></param>
+            <param name="procname"></param>
+            <param name="parameters">OracleParameter[] parameters ={new OracleParameter("paramin",OracleType.VarChar,20)};parameters[0].Value = "bjd";parameters[2].Value = "cs";parameters[0].Direction = ParameterDirection.Input;</param>
+        </member>
+        <member name="M:PersonalCommon.OracleHelper.ExecProcDataSet(System.String,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            带参数有返回值的存储过程
+            </summary>
+            <param name="strconn"></param>
+            <param name="procname"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="T:PersonalCommon.SQLHelper">
+            <summary>
+            Copyright (C) 2004-2008 LiTianPing 
+            数据访问基础类(基于SQLServer)
+            用户可以修改满足自己项目的需要。
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.GetMaxID(System.String,System.String,System.String)">
+            <summary>
+            返回表的最大行数+1
+            </summary>
+            <param name="FieldName">字段名</param>
+            <param name="TableName">表名</param>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.Exists(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            查看结果是否存在数据
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="connectionString"></param>
+            <param name="cmdParms">参数</param>
+            <returns>true 存在 false不存在</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteSqlTran(System.Collections.ArrayList,System.String)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>  
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteSql(System.String,System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteSqlInsertImg(System.String,System.Byte[],System.String)">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.GetSingle(System.String,System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteReader(System.String,System.String)">
+            <summary>
+            执行查询语句，返回SqlDataReader
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.Query(System.String,System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteSql(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteSqlTran(System.Collections.Hashtable,System.String)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.GetSingle(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.ExecuteReader(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回SqlDataReader
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.Query(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.RunProcedure(System.String,System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.RunProcedure(System.String,System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.RunProcedure(System.String,System.String,System.Data.IDataParameter[],System.Int32@)">
+            <summary>
+            执行存储过程，返回影响的行数  
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.SQLHelper.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值) 
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="T:PersonalCommon.TypeHelper">
+            <summary>
+            类型转换
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.TypeHelper.ListToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Convert a List{T} to a DataTable.
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.TypeHelper.IsNullable(System.Type)">
+            <summary>
+            Determine of specified type is nullable
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.TypeHelper.GetCoreType(System.Type)">
+            <summary>
+            Return underlying type if type is Nullable otherwise return the type
+            </summary>
+        </member>
+        <member name="M:PersonalCommon.TypeHelper.ListToTable``1(System.Collections.Generic.List{``0},System.Boolean)">
+            <summary>  
+            List集合转DataTable  
+            </summary>  
+            <typeparam name="T">实体类型</typeparam>  
+            <param name="list">传入集合</param>  
+            <param name="isStoreDB">是否存入数据库DateTime字段，date时间范围没事，取出展示不用设置TRUE</param>  
+            <returns>返回datatable结果</returns>  
+        </member>
+        <member name="M:PersonalCommon.TypeHelper.TableToEntity``1(System.Data.DataTable,System.Int32,System.Boolean)">
+            <summary>  
+            table指定行转对象  
+            </summary>  
+            <typeparam name="T">实体</typeparam>  
+            <param name="dt">传入的表格</param>  
+            <param name="rowindex">table行索引，默认为第一行</param>  
+            <param name="isStoreDB">是否存入数据库DateTime字段，date时间范围没事，取出展示不用设置TRUE</param> 
+            <returns>返回实体对象</returns>  
+        </member>
+        <member name="T:PersonalCommon.ModelConvertHelper`1">
+            <summary>
+            实体转换辅助类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:PersonalCommon.ModelConvertHelper`1.ConvertToModel(System.Data.DataTable)">
+            <summary>
+            DataTable转化IList
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersonalCommon.ModelConvertHelper`1.TableToList``1(System.Data.DataTable,System.Boolean)">
+            <summary>  
+            DataTable转化为List集合  
+            </summary>  
+            <typeparam name="T">实体对象</typeparam>  
+            <param name="dt">datatable表</param>  
+            <param name="isStoreDB">是否存入数据库datetime字段，date字段没事，取出不用判断</param>  
+            <returns>返回list集合</returns>  
+        </member>
+    </members>
+</doc>
